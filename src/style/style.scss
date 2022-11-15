@@ -1,0 +1,91 @@
+#FAQ_body {
+	position: relative;
+	width: 924px;
+	height: 508px;
+	background-color: #fff;
+	margin: 0 auto;
+	border-radius: 25px;
+}
+.container__items {
+	width: 570px;
+	height: 508px;
+	position: absolute;
+	z-index: 6;
+	overflow:hidden
+	
+}
+.items__illustration-woman {
+	position: absolute;
+	top: 15%;
+	left: -80px;
+	z-index: 4;
+}
+.item__cube {
+	z-index: 10;
+	position: absolute;
+	top: 42%;
+	left: -92px;
+}
+.items__illustration-shadow{
+	z-index: 4;
+	position: absolute;
+	bottom: -145px;
+	left: -580px;
+}
+
+.container__content {
+	position: absolute;
+	width: 450px;
+	height: 100%;
+	right: 0;
+	padding: 75px 0px 0px 0px;
+
+
+	.content__title{
+		font-family: 'Kumbh Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-size: 34px;
+		font-weight: 700;
+	}
+
+	.content__items {
+		font-family: 'Kumbh Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		padding: 25px 0px 0px 0px;
+		.title__item {
+			display: inline-block;
+			font-size: 12px;
+			font-weight: 700;
+		}
+
+		.title__item::after {
+				content: url('data:image/svg+xml; base64, <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg"><path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd"/></svg>');
+				padding: 0 70px;
+				width: 10px;
+				height: 7px;
+			}
+		.item__text {
+			display: inline-block;
+			padding: 10px 0px 0px 0px;
+			width: 310px;
+			font-size: 12px;
+			font-weight: 400;
+			opacity: 0.7;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+}
+
