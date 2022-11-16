@@ -13,7 +13,6 @@
 
 # Avoid your project being littered with annoying .DS_Store files! # Избегайте того, чтобы ваш проект был завален раздражающими файлами .DS_Store!
 .DS_Store
-
+*.md
 .prettierignore
-
 node_modules
