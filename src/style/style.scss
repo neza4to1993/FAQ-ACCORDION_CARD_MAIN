@@ -1,4 +1,56 @@
-#FAQ_body {
+@media screen and (max-width:838px) {
+	.body{
+		padding: 45px 5px 0px 15px;
+	}
+	#FAQ_body{
+		margin: 25px auto;
+		width: 375px;
+		height: 85%;
+		display: flex;
+		flex-direction: column;
+		padding: 0px 0px 0px 45px;
+		text-align: center;
+	}
+				.container__item {
+					display: none;
+				}
+				.container__items{
+					display: none;
+				}
+		#FAQ__content {
+			padding: 0px 0px 0px 0px;
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 10%;
+			top: 20%;
+				.content__title{
+					display: block;
+					padding: 0px 0px 20px 0px;
+				}
+				.title__item{
+					font-size: 13px;
+				}
+		}
+			
+				#woman_mobile{
+					display: block;
+					top: -16%;
+					left: 20%;
+				}
+				#swadow_mobile{
+					display: block;
+					position: absolute;
+					top: 0%;
+					left: 17%;
+				}
+	.footer {
+		left: 0;
+		bottom: -20px;
+	}
+}
+.container {
 	display: flex;
 	position: relative;
 	width: 924px;
@@ -8,11 +60,11 @@
 	border-radius: 25px;
 }
 .container__items {
-	width: 470px;
+	width: 60%;
 	height: 508px;
 	position: absolute;
 	z-index: 6;
-	overflow:hidden
+	overflow:hidden;
 }
 .items__illustration-woman {
 	position: absolute;
@@ -32,16 +84,19 @@
 	bottom: -145px;
 	left: -580px;
 }
+
+// right content
 .container__content {
 	display: flex;
 	flex-direction: column;
+	justify-content: right;
 	position: absolute;
-	width: 450px;
+	width: 45%;
 	height: 100%;
 	right: 0;
-	padding: 60px 0px 0px 0px;
+	padding: 60px 15px 0px 0px;
 		.content__body{
-			width: 310px;
+			max-width: 310px;
 		}
 			.content__title{
 					font-family: 'Kumbh Sans', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -59,10 +114,10 @@
 						font-size: 12px;
 						font-weight: 400;
 					}
+					
 					.title__item:after {
 							float: right;
 							content: url(img/icon-arrow-down.svg);
-							padding: 0px 30px 0px 0px;
 							width: 20px;
 							height: 20px;
 						}
@@ -71,24 +126,45 @@
 							cursor: help;
 						}
 					.item__text {
+						opacity: 0;
 						display: none;
-						padding: 10px 0px 0px 0px;
-						width: 310px;
+						padding: 10px 5px 0px 0px;
+						width: 300px;
 						font-size: 12px;
 						font-weight: 400;
 						opacity: 0.7;
 					}
 				}
 			}
+// arrow right
+.after:after {
+	text-align: center;
+	right: 33%;
+	margin: auto;
+	transform: rotate(180deg);
+	margin: -7px 5px 0px 0px;
+}
 
-
-
-
+.items__mobilewomanandshadow{
+	display: flex;
+	.items__illustration-woman-mobile{
+		display: none;
+		position: absolute;
+		max-width: 60%;
+		top: 11%;
+		left: -80px;
+		z-index: 4;
+}
+	.items__illustration-shadow-mobile{
+		display: none;
+}
+}
 
 
 
 footer {
 	position: absolute;
+	padding: 15px;
 	left: 0;
 	bottom: 0;
 	width: 100%;

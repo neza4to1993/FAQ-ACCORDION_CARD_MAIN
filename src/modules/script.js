@@ -26,26 +26,45 @@ function changingСube() {
 	}
 }
 
-function openText() {
-	const divText = document.querySelectorAll('.item__text');
-	console.log(this.children);
-	
-	divText.forEach(element => {
-		element.addEventListener('click', openText)
-	});
-	console.log(this.children);
-	if (this.getAttribute("open") === "false"){
-		this.setAttribute('open', 'true')
-	} else {
-		this.setAttribute('open', 'false')
-	}
+function openAfterTitle(iconArrow) {
+	iconArrow.classList.toggle('after');
+	console.log(iconArrow);
+	iconArrow.style.cssText = `
+	font-weight: 700;
+	`
+}
+function closeAfterTitle(iconArrow) {
+	iconArrow.classList.toggle('after');
+	console.log(iconArrow)
+	iconArrow.style.cssText = `
+	font-weight: 400;
+	`
 }
 
+function openText() {
+	const divText = document.querySelectorAll('.title__item');
+	const text = this.nextElementSibling;
+	
 
+	divText.forEach(element => {
+		element.addEventListener('click', openText);
+	});
 
-
-
-
+	if (text.getAttribute("open") === "false"){
+		text.setAttribute('open', 'true')
+			text.style.cssText = `
+			display:block;
+			color: black;
+			`
+			openAfterTitle(this)
+	} else {
+		text.setAttribute('open', 'false')
+		text.style.cssText = `
+			display:none
+			`
+			closeAfterTitle(this)
+	}
+}
 
 
 
