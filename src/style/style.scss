@@ -126,13 +126,41 @@
 							cursor: help;
 						}
 					.item__text {
-						opacity: 0;
+						overflow: hidden;
 						display: none;
 						padding: 10px 5px 0px 0px;
 						width: 300px;
+						max-height: 80px;
 						font-size: 12px;
 						font-weight: 400;
+						color: black;
+						opacity: 1;
+						line-height:15px;
+					}
+				}
+				.animation {
+					animation: text 0.2s ease;
+					@keyframes text{
+						0%{
+						margin-top: -4%;
+						opacity: 0;
+						}
+						30%{
+							margin-top: -3%;
+							opacity: 0.1;
+						}
+						50%{
+						margin-top: -2%;
+						opacity: 0.2;
+						}
+						80%{
+						margin-top: -1%;
+						opacity: 0.5;
+						}
+						100%{
+						margin-top: 0%;
 						opacity: 0.7;
+						}
 					}
 				}
 			}

@@ -1,5 +1,5 @@
-const btnTitle = document.querySelectorAll('.title__item').forEach(element => {element.addEventListener('mouseover', changingСube)});
-const btnTitleOpenText = document.querySelectorAll('.title__item').forEach(element => {element.addEventListener('click', openText)});
+document.querySelectorAll('.title__item').forEach(element => {element.addEventListener('mouseover', changingСube)});
+document.querySelectorAll('.title__item').forEach(element => {element.addEventListener('click', openText)});
 
 function changingСube() {
 	document.querySelectorAll('.title__item').forEach(element => {
@@ -27,15 +27,19 @@ function changingСube() {
 }
 
 function openAfterTitle(iconArrow) {
+
 	iconArrow.classList.toggle('after');
-	console.log(iconArrow);
 	iconArrow.style.cssText = `
 	font-weight: 700;
 	`
 }
+
+function animationText(animation) {
+	animation.classList.toggle('animation');
+}
+
 function closeAfterTitle(iconArrow) {
 	iconArrow.classList.toggle('after');
-	console.log(iconArrow)
 	iconArrow.style.cssText = `
 	font-weight: 400;
 	`
@@ -44,29 +48,50 @@ function closeAfterTitle(iconArrow) {
 function openText() {
 	const divText = document.querySelectorAll('.title__item');
 	const text = this.nextElementSibling;
-	
+	resetStyles(divText);
 
 	divText.forEach(element => {
 		element.addEventListener('click', openText);
 	});
-
-	if (text.getAttribute("open") === "false"){
+	console.log(text);
+	if (text.getAttribute("open") === "false" & text.getAttribute("defaultActive") === "true"){
 		text.setAttribute('open', 'true')
-			text.style.cssText = `
-			display:block;
-			color: black;
-			`
-			openAfterTitle(this)
+		console.log('я в text.setAttribute\(\'open\', \'true\'\)');
+		
+		text.style.cssText=`
+		display: block;
+		`
+			openAfterTitle(this);
+			animationText(text);
 	} else {
+		console.log('я в text.setAttribute\(\'open\', \'false\'\)');
 		text.setAttribute('open', 'false')
-		text.style.cssText = `
-			display:none
-			`
-			closeAfterTitle(this)
+			animationText(text);
+			closeAfterTitle(this);
 	}
 }
 
+function resetStyles(count) {
+	count.forEach(element => {
+		const countText = element.nextElementSibling;
+		element.classList.remove('after');
+		element.style.cssText=`
+		font-weight: 400;
+		`
+		countText.classList.remove('animation');
+		
+					if(countText.getAttribute('defaultActive') === 'true'){
+							countText.setAttribute('defaultActive', 'false');
+							countText.setAttribute('open', 'false');
+					} else{
+						countText.setAttribute('defaultActive', 'true');
+					}
 
+		countText.style.cssText=`
+		display: none;
+		`
+	});
+}
 
 
 
