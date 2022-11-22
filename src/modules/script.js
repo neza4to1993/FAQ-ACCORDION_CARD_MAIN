@@ -45,18 +45,17 @@ function closeAfterTitle(iconArrow) {
 	`
 }
 
-function openText() {
+function openText(event) {
 	const divText = document.querySelectorAll('.title__item');
 	const text = this.nextElementSibling;
-	resetStyles(divText);
+	const numberRow = event.target.attributes[1].nodeValue;
+	resetStyles(divText, numberRow);
 
 	divText.forEach(element => {
 		element.addEventListener('click', openText);
 	});
-	console.log(text);
-	if (text.getAttribute("open") === "false" & text.getAttribute("defaultActive") === "true"){
+	if (text.getAttribute("open") === "false" & text.getAttribute("defaultactive") === "true"){
 		text.setAttribute('open', 'true')
-		console.log('я в text.setAttribute\(\'open\', \'true\'\)');
 		
 		text.style.cssText=`
 		display: block;
@@ -64,34 +63,44 @@ function openText() {
 			openAfterTitle(this);
 			animationText(text);
 	} else {
-		console.log('я в text.setAttribute\(\'open\', \'false\'\)');
 		text.setAttribute('open', 'false')
 			animationText(text);
 			closeAfterTitle(this);
 	}
 }
 
-function resetStyles(count) {
-	count.forEach(element => {
-		const countText = element.nextElementSibling;
-		element.classList.remove('after');
-		element.style.cssText=`
-		font-weight: 400;
-		`
-		countText.classList.remove('animation');
-		
-					if(countText.getAttribute('defaultActive') === 'true'){
-							countText.setAttribute('defaultActive', 'false');
-							countText.setAttribute('open', 'false');
-					} else{
-						countText.setAttribute('defaultActive', 'true');
-					}
+function resetStyles(count, numberRow) {
+count.forEach(element => {
+	const countText = element.nextElementSibling;
+	console.log(countText);
 
-		countText.style.cssText=`
-		display: none;
-		`
+		if(element.id !== numberRow){
+			element.classList.remove('after');
+			element.style.cssText=`
+			font-weight: 400;
+			`
+			countText.classList.remove('animation');
+						countText.setAttribute('open', 'false');
+						countText.style.cssText=`
+						display: none;
+						`
+						countText.setAttribute('defaultactive', 'false')
+				}else{
+					if(countText.getAttribute('defaultactive') === 'true'){
+						countText.setAttribute('defaultactive', 'false');
+						countText.style.cssText=`
+						display: none;
+						`
+					}else {
+						countText.setAttribute('defaultactive', 'true');
+					}
+				}
+
+		
 	});
 }
+
+
 
 
 
