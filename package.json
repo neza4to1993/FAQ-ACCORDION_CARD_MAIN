@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve",
 	 "predeploy" : "npm run build",
-	"deploy" : "gh-pages -d build",
+	 "deploy" : "gh-pages -d build",
+	 "build": "react-scripts build",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --node-env=production",
     "clear": "rd /s /q dist"
