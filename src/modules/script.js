@@ -72,7 +72,6 @@ function openText(event) {
 function resetStyles(count, numberRow) {
 count.forEach(element => {
 	const countText = element.nextElementSibling;
-	console.log(countText);
 
 		if(element.id !== numberRow){
 			element.classList.remove('after');
