@@ -1,0 +1,52 @@
+@media screen and (max-width:838px) {
+	.body{
+		padding: 45px 5px 0px 15px;
+	}
+	#FAQ_body{
+		margin: 25px auto;
+		width: 375px;
+		height: 85%;
+		display: flex;
+		flex-direction: column;
+		padding: 0px 0px 0px 45px;
+		text-align: center;
+	}
+				.container__item {
+					display: none;
+				}
+				.container__items{
+					display: none;
+				}
+		#FAQ__content {
+			padding: 0px 0px 0px 0px;
+			display: block;
+			width: 320px;
+			height: 400px;
+			position: absolute;
+			left: 5%;
+			top: 20%;
+				.content__title{
+					display: block;
+					padding: 0px 0px 20px 0px;
+				}
+				.title__item{
+					font-size: 13px;
+				}
+		}
+			
+				#woman_mobile{
+					display: block;
+					top: -16%;
+					left: 20%;
+				}
+				#swadow_mobile{
+					display: block;
+					position: absolute;
+					top: 0%;
+					left: 17%;
+				}
+	.footer {
+		left: 0;
+		bottom: -20px;
+	}
+}
